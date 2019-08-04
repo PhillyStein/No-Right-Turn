@@ -23,6 +23,12 @@ public class TutorialManager : MonoBehaviour
             currentTut = 2;
             UpdateTutorial();
         }
+
+        if (GameManager.instance.currentLevel == 2)
+        {
+            currentTut = 3;
+            UpdateTutorial();
+        }
     }
 
     public void UpdateTutorial()

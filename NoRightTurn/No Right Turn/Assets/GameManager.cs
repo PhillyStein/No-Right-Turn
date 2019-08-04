@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
         winText.text = "Level " + (currentLevel + 1) + " Complete!";
         pressText.text = "Press < to go to the next level.";
         winScreen.SetActive(true);
-        NextLevel();
+        currentLevel++;
     }
 
     public void LoseLevel()
@@ -107,16 +107,5 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        currentLevel++;
-
-        foreach(GameObject level in levels)
-        {
-            level.SetActive(false);
-        }
-
-        if (currentLevel < levels.Length)
-        {
-            levels[currentLevel].SetActive(true);
-        }
     }
 }
