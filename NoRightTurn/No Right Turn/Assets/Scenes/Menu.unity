@@ -240,6 +240,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202191102}
   m_CullTransparentMesh: 0
+--- !u!212 &358977493 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7299913113919023703, guid: 93e04962c41a38a4b976d4f30024d3ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1306774118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &584392697
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,6 +3424,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1884039887}
+  playerSprite: {fileID: 358977493}
+  carSprites:
+  - {fileID: 21300000, guid: 342bda8eb74e10645a1d1ce98a334ff4, type: 3}
+  - {fileID: 21300000, guid: 3303ffed0be64db41898955f94327b05, type: 3}
+  - {fileID: 21300000, guid: abf99387b78bce74e86747aea3c96b95, type: 3}
+  - {fileID: 21300000, guid: 6170016b8db0f344aa79c2994003f0df, type: 3}
+  - {fileID: 21300000, guid: c34c2cf51e608044080751954435c39a, type: 3}
+  - {fileID: 21300000, guid: 8634d392331d11646a4b73fed0413865, type: 3}
+  - {fileID: 21300000, guid: 9a2ea99d03ce7cf4da2db0c424d33eac, type: 3}
+  - {fileID: 21300000, guid: 4225ae1d75e17f44fa726e97cf68306f, type: 3}
+  - {fileID: 21300000, guid: ecb2ef8c47656d44c92d7f04add53fcc, type: 3}
+  - {fileID: 21300000, guid: e52650afa09b25347b74323f0f9e486f, type: 3}
+  - {fileID: 21300000, guid: a1355665b15d04d488c369395ae7b51a, type: 3}
+  - {fileID: 21300000, guid: 25b947f719bb8974fad4d8a52a723793, type: 3}
+  - {fileID: 21300000, guid: 630d0a2df0823bc4a9b6798a757cf9e0, type: 3}
+  - {fileID: 21300000, guid: a6226e51dbd8d524b99f159bdaa73ce1, type: 3}
+  - {fileID: 21300000, guid: d0637b9f11695874389825bac0fc18b4, type: 3}
+  - {fileID: 21300000, guid: 0883bb737788be84c957d1ca84f8e5bc, type: 3}
+  - {fileID: 21300000, guid: 76a15d2062fa5b3438ca5385880ee65c, type: 3}
+  - {fileID: 21300000, guid: 12757d139ed858d469116cb3a34e2339, type: 3}
+  - {fileID: 21300000, guid: 42372894446b8fd4a923d53d0cb06af9, type: 3}
+  - {fileID: 21300000, guid: 02637ab008abd95419d17fe5996a9fcc, type: 3}
+  - {fileID: 21300000, guid: 30c9d2b21fd26544b8769bc5ec62e249, type: 3}
+  - {fileID: 21300000, guid: a6bdc9c6957139d49a5d327768caf6e6, type: 3}
+  - {fileID: 21300000, guid: c6ffd533c219cd843b84554fbc307328, type: 3}
+  - {fileID: 21300000, guid: 4278844be46675341aa7c6af2814b858, type: 3}
+  - {fileID: 21300000, guid: a9913a9f9173c6d4ea735ef8f6325e0c, type: 3}
+  playerSettings: {fileID: 0}
 --- !u!4 &1525284957
 Transform:
   m_ObjectHideFlags: 0
@@ -3514,7 +3548,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1527388199}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1525284956}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1527388199
@@ -3605,7 +3650,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3858,7 +3903,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 25.3
+  m_fontSize: 21.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4024,7 +4069,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1921897361}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1525284956}
+        m_MethodName: StartTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1921897361
@@ -4231,7 +4287,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 25.05
+  m_fontSize: 20.65
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

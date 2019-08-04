@@ -2835,16 +2835,14 @@ MonoBehaviour:
   player: {fileID: 1198177649}
   winScreen: {fileID: 1007951399}
   countdownPanel: {fileID: 1516453794}
-  finishLine: {fileID: 2058136029}
   winText: {fileID: 2021783763}
   pressText: {fileID: 1940914433}
   countdownText: {fileID: 1355576667}
   levelStartPos:
   - {x: -8, y: -3.5}
-  finishLinePos:
-  - {x: 5.5, y: 5.5}
   levelStartRotation:
   - 0
+  isTutorial: 0
 --- !u!1 &613695825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,7 +2952,7 @@ Transform:
   - {fileID: 228288842}
   - {fileID: 1972038506}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &974530540
 GameObject:
