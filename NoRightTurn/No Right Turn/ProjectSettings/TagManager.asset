@@ -8,6 +8,7 @@ TagManager:
   - BeforeTurn
   - FinishLine
   - Boundary
+  - TutorialTrigger
   layers:
   - Default
   - TransparentFX
