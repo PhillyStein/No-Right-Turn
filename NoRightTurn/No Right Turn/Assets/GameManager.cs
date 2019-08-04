@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,15 +14,13 @@ public class GameManager : MonoBehaviour
     public Movement player;
 
     public GameObject winScreen,
-                        countdownPanel,
-                        finishLine;
+                        countdownPanel;
 
     public TextMeshProUGUI winText,
                             pressText,
                             countdownText;
 
-    public Vector2[] levelStartPos = { new Vector2(-8, -3.5f) },
-                        finishLinePos = { new Vector2(5.5f, 5.5f)};
+    public Vector2[] levelStartPos = { new Vector2(-8, -3.5f), new Vector2(-8,-3.5f) };
 
     public float[] levelStartRotation = { 0 };
 
@@ -49,14 +48,31 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyUp(KeyCode.K))
+        {
+            player.winState = true;
+            WinLevel();
+        }
+
     }
 
     public void StartLevel()
     {
-        player.transform.position = levelStartPos[currentLevel];
-        player.rotation = levelStartRotation[currentLevel];
-        finishLine.transform.position = finishLinePos[currentLevel];
-        StartCoroutine(StartCountdown());
+        foreach(GameObject level in levels)
+        {
+            level.SetActive(false);
+        }
+        if (currentLevel < levels.Length)
+        {
+            levels[currentLevel].SetActive(true);
+
+            player.transform.position = levelStartPos[currentLevel];
+            player.rotation = levelStartRotation[currentLevel];
+            StartCoroutine(StartCountdown());
+        } else
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 
     IEnumerator StartCountdown()
@@ -79,6 +95,7 @@ public class GameManager : MonoBehaviour
         winText.text = "Level " + (currentLevel + 1) + " Complete!";
         pressText.text = "Press < to go to the next level.";
         winScreen.SetActive(true);
+        NextLevel();
     }
 
     public void LoseLevel()
@@ -97,7 +114,7 @@ public class GameManager : MonoBehaviour
             level.SetActive(false);
         }
 
-        if (currentLevel <= levels.Length)
+        if (currentLevel < levels.Length)
         {
             levels[currentLevel].SetActive(true);
         }

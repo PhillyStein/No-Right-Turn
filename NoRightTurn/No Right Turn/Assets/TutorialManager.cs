@@ -18,7 +18,11 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(GameManager.instance.currentLevel == 1)
+        {
+            currentTut = 2;
+            UpdateTutorial();
+        }
     }
 
     public void UpdateTutorial()

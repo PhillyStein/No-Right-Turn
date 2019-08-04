@@ -9,6 +9,8 @@ TagManager:
   - FinishLine
   - Boundary
   - TutorialTrigger
+  - Road
+  - Oilslick
   layers:
   - Default
   - TransparentFX

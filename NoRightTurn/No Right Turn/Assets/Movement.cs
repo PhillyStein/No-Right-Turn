@@ -97,8 +97,22 @@ public class Movement : MonoBehaviour
 
         if(other.tag == "Boundary")
         {
-            loseState = true;
-            GameManager.instance.LoseLevel();
+            if (!winState)
+            {
+                loseState = true;
+                GameManager.instance.LoseLevel();
+            }
+        }
+
+        if(other.tag == "Oilslick")
+        {
+            float[] posRotations = { 0, 90, 180, 270};
+            float newRotation = posRotations[Random.Range(0, 3)];
+            while(newRotation == rotation) {
+                 newRotation = posRotations[Random.Range(0, 3)];
+            }
+
+            rotation = newRotation;
         }
     }
 
@@ -108,11 +122,20 @@ public class Movement : MonoBehaviour
         {
             canTurn = false;
         }
+
+        if (other.tag == "Road")
+        {
+            if (!winState)
+            {
+                loseState = true;
+                GameManager.instance.LoseLevel();
+            }
+        }
     }
 
     public void ClearStates()
-    {
-        winState = false;
-        loseState = false;
-    }
+     {
+            winState = false;
+            loseState = false;
+     }
 }
