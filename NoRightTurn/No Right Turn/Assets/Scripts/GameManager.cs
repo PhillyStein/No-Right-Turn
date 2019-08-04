@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour
                             pressText,
                             countdownText;
 
-    public Vector2[] levelStartPos = { new Vector2(-8, -3.5f), new Vector2(-8,-3.5f) };
+    public Vector2[] levelStartPos = { new Vector2(-8, -3.5f), new Vector2(-8,-3.5f), new Vector2(0.5f,4.25f), new Vector2(-0.5f,-4.25f), new Vector2(-0.5f,-4.25f)};
 
-    public float[] levelStartRotation = { 0 };
+    public float[] levelStartRotation = { 0, 0, 270, 90, 90 };
 
     public static GameManager instance;
 
